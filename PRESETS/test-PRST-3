@@ -1,0 +1,11 @@
+test/esteban/calca-vrd 4;
+test/\$2/\$3-hsl 0;
+test/instr/pan-hsl 124;
+test/instr/gain-hsl 118;
+test/grid/matrix-msc 0 150 0.49 650 1 200 0;
+test/roberto/garcia-tgl 1;
+test/carlos/sanchez-tgl 1;
+test/casa/juan-hrd 6;
+test/GRNS/attack-vsl 83;
+test/voices/grain-nbx 117;
+test-INT.TIME 1000;
