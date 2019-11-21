@@ -9,6 +9,8 @@ This version of RSVP is completely developed with Pure Data vanilla 0.50 which m
 
 The system is designed to use the wrappers as templates to modify and create personalized GUIs. More explanation and tutorials to come.
 
+![](rsvp1.gif)
+
 # IMPORTANT 
 ## (RSVP breaks backwards compatability)
 Because RSVP is designed as a local library, it is better to leave projects done with previous versions with their own local version. 
