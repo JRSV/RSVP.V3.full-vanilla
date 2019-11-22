@@ -1,4 +1,4 @@
-# RSVP [Répondez S’il Vous Plaît](R)afael (S)ubía (V)aldez (P)resets]
+# RSVP [Répondez S’il Vous Plaît]
 ## [(R)afael (S)ubía (V)aldez (P)resets] 
 State Saving System for Pure Data
 
