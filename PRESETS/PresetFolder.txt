@@ -1,0 +1,1 @@
+Here RSVP records the presets of all the project using the local library, this means that even if you use various [PresetManagers] to control different groups of GUIs, all the presets are going to be stored here. Identify them by the SUFFIX in their name.
