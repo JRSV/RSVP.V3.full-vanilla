@@ -9,6 +9,13 @@ This version of RSVP is completely developed with Pure Data vanilla 0.50 which m
 
 The system is designed to use the abstractions as templates to modify and create personalized GUIs. More explanation and tutorials to come.
 
+### HISTORY
+## Beginning
+# Version 1
+RSVP was developed in 2016 when working on my PhD at The University of Edinburgh. Initially it was designed to simplify state saving in Pure Data as an alternative to more extensive State Saving methods like "Kollabs". The first version of RSVP made use of planty of externals and libraries from the Pure Data community. This made RSVP easier to use, but increased its dependence of external code. The saving and recalling mechanism was complex and made use of the [coll] object avialable in the "Cyclone" library. Its development started with Pure Data 0.46 which did not include the now used text object. This version of RSVP was presented in the LAC2018 - Berlin.
+
+
+
 ![](rsvp1.gif)
 
 # IMPORTANT 
