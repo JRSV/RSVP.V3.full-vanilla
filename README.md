@@ -9,11 +9,15 @@ This version of RSVP is completely developed with Pure Data vanilla 0.50 which m
 
 The system is designed to use the abstractions as templates to modify and create personalized GUIs. More explanation and tutorials to come.
 
-# HISTORY
-## Beginning
+## HISTORY
 ### Version 1
 RSVP was developed in 2016 when working on my PhD at The University of Edinburgh. Initially it was designed to simplify state saving in Pure Data as an alternative to more extensive State Saving methods like "Kollabs". The first version of RSVP made use of planty of externals and libraries from the Pure Data community. This made RSVP easier to use, but increased its dependence of external code. The saving and recalling mechanism was complex and made use of the [coll] object avialable in the "Cyclone" library. Its development started with Pure Data 0.46 which did not include the now used text object. This version of RSVP was presented in the LAC2018 - Berlin.
 
+### Version 2
+Version 2 of RSVP was never made public and wrapped the [param] object from the "tof" library. This simplified the system but used a library which had not been updated nor had any further support or development. This version showed a new way of working with presets as it recorded a file for each preset, unlike Version 1 which recorded all presets in a large text file. It works extremly well and my PhD project made use of this version extensively, however concerns of using a library that was not getting updated were still there and I decided to continue developing an idea to create an RSVP version completely compatible with Pure Data vanilla. Fortunately, PD 47 incorporated the [text] object and offered a solution. 
+
+### Version 3
+With the incorporation of the [text] object in Pure Data vanilla and understanding how the [param] object divided each preset into its own text file, I decided to adapt version 1 wrapping solutions to record states into text files useing the [text] object. As a result, RSVP version 3 is now working and completely vanilla friendly. 
 
 
 ![](rsvp1.gif)
