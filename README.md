@@ -21,7 +21,7 @@ Version 2 of RSVP was never made public and wrapped the [param] object from the 
 With the incorporation of the [text] object in Pure Data vanilla and understanding how the [param] object divided each preset into its own text file, I decided to adapt version 1 wrapping solutions to record states into text files useing the [text] object. As a result, RSVP version 3 is now working and completely vanilla friendly. 
 
 
-![](rsvp1.gif)
+[RSVP demo](https://github.com/JRSV/RSVP.V3.full-vanilla/blob/master/wikiFiles/rsvp1.gif)
 
 # IMPORTANT 
 ## (RSVP breaks backwards compatability)
