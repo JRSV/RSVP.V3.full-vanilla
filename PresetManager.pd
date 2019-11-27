@@ -1,4 +1,4 @@
-#N canvas 2149 168 1040 609 10;
+#N canvas 352 274 1040 609 10;
 #X declare -path ./customGUI;
 #X obj 501 101 cnv 15 180 63 empty \$0-PreManager-presetName \$1 5
 53 0 14 -228856 -1 0;
@@ -178,6 +178,7 @@ get eliminated from the preset, f 28;
 #X text 243 323 loads the preset before calling, f 21;
 #X floatatom 152 294 5 0 0 0 - - -;
 #X obj 709 509 print;
+#X obj 503 59 r remote-PRST-change-\$1;
 #X connect 1 0 25 0;
 #X connect 2 0 13 0;
 #X connect 2 0 26 0;
@@ -201,4 +202,5 @@ get eliminated from the preset, f 28;
 #X connect 26 1 24 0;
 #X connect 26 2 24 1;
 #X connect 27 1 32 0;
+#X connect 33 0 2 0;
 #X coords 0 -1 1 1 182 65 2 500 100;

@@ -1,0 +1,31 @@
+#N canvas 150 263 752 488 12;
+#X text 225 197 just 1 arg;
+#X floatatom 30 339 5 0 0 0 - - -;
+#X obj 30 361 s test/instr/gain-hsl;
+#X floatatom 30 405 5 0 0 0 - - -;
+#X obj 30 427 s test/\$2/\$3-hsl;
+#X obj 110 110 nbx_pre test voices grain;
+#X obj 36 119 vsl_pre test GRNS attack;
+#X obj 76 248 hrd_pre test casa juan;
+#X obj 266 52 tgl_pre test carlos sanchez;
+#X obj 683 427 ./customGUI/tgl_pre.red-green test roberto garcia;
+#X floatatom 683 453 5 0 0 0 - - -;
+#X obj 89 136 hsl_pre test instr gain;
+#X obj 89 166 hsl_pre test instr pan;
+#X obj 89 196 hsl_pre test;
+#X obj 30 16 PresetManager test;
+#X obj 203 427 s remote-PRST-change-test;
+#X floatatom 203 404 5 0 0 0 - - -;
+#X obj 357 70 vrd_pre test esteban calca;
+#X obj 569 182 ./extraGUI/knb_pre test alberto fernandez;
+#X obj 475 43 ./extraGUI/brp_pre test juan casa;
+#X msg 492 224 ./extraGUI/knb_pre \$1 \$2 \$3;
+#X msg 475 15 ./extraGUI/brp_pre \$1 \$2 \$3;
+#X text 433 248 extra GUIs: a knob from "flatgui" which probably will
+be obsolete soon. It does not work in all OSs \, a breakpoints function
+from "tof" \, I could use one from "ggee" (unstable) or "ELSE"., f
+39;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 9 0 10 0;
+#X connect 16 0 15 0;

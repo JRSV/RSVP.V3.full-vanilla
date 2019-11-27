@@ -1,0 +1,159 @@
+#N canvas 399 96 852 813 10;
+#X obj 300 467 cnv 10 198 11 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 460 468 bng 9 250 50 0 \$0-send-reset-brp empty RESET 11 5 0
+9 -4032 -258113 -228856;
+#X obj 302 467 nbx 5 10 10 1e+37 0 0 empty \$0-BRP-DUR_PresetCallback
+DURATION 55 6 0 10 -4032 -1 -258113 162 256;
+#X text 649 763 www.jrsv.net;
+#X text 607 738 released under GPL license;
+#X text 627 751 Edinburgh - Scotland;
+#X msg 211 323 dump;
+#X obj 559 666 outlet;
+#X msg 460 305 0 0.5 1 0.5 0;
+#X obj 782 318 cnv 10 25 10 empty empty empty 3 5 0 8 -159808 -4032
+0;
+#X obj 779 298 cnv 10 25 10 empty empty empty 3 5 0 8 -159808 -4032
+0;
+#X obj 73 34 inlet;
+#X obj 302 566 list append;
+#X obj 781 336 cnv 10 25 10 empty empty empty 3 5 0 8 -260097 -4032
+0;
+#X obj 783 356 cnv 10 25 10 empty empty empty 3 5 0 8 -4034 -4032 0
+;
+#X obj 395 497 list;
+#X obj 783 272 cnv 10 25 10 empty empty GUI 3 5 0 8 -258113 -4032 0
+;
+#X obj 303 357 ./tof/breakpoints 190 105;
+#X text 607 723 (c) J.Rafael Subia V. 2019;
+#X obj 106 114 r \$1-save_preset;
+#N canvas 24 96 778 549 RECALL_PRESETS 0;
+#X obj 59 402 outlet;
+#X obj 59 327 route list;
+#X obj 59 258 route list;
+#X obj 59 158 list prepend symbol;
+#X obj 330 10 r \$1-PRECALL;
+#X obj 362 395 outlet;
+#X text 501 306 reads Interpolation Time;
+#X text 160 252 reads preset value;
+#X obj 362 291 route list;
+#X obj 362 222 route list;
+#X obj 362 154 list prepend symbol;
+#X obj 362 132 makefilename \$1-INT.TIME;
+#X obj 362 314 route \$1-INT.TIME;
+#X obj 223 156 cnv 15 15 15 empty empty CHANGE.GUI 18 7 0 8 -257985
+-66577 0;
+#X obj 173 369 cnv 15 15 15 empty empty CHANGE.GUI 18 7 0 8 -257985
+-66577 0;
+#X text 456 47 \$1 is name of "PresetManager" on control;
+#X obj 362 245 text search \$1-loaded-preset;
+#X obj 362 268 text get \$1-loaded-preset;
+#X obj 330 37 t b b;
+#X obj 59 281 text search \$1-loaded-preset;
+#X obj 59 304 text get \$1-loaded-preset;
+#X obj 59 136 makefilename \$1/\$2/\$3-brp;
+#X obj 59 350 route \$1/\$2/\$3-brp;
+#X connect 1 0 22 0;
+#X connect 2 0 19 0;
+#X connect 3 0 2 0;
+#X connect 4 0 18 0;
+#X connect 8 0 12 0;
+#X connect 9 0 16 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 5 0;
+#X connect 16 0 17 0;
+#X connect 17 0 8 0;
+#X connect 18 0 21 0;
+#X connect 18 1 11 0;
+#X connect 19 0 20 0;
+#X connect 20 0 1 0;
+#X connect 21 0 3 0;
+#X connect 22 0 0 0;
+#X restore 495 8 pd RECALL_PRESETS;
+#N canvas 285 419 395 333 RECORD_PRESETS 0;
+#X obj 30 20 inlet;
+#X msg 87 132 1e+15;
+#X obj 30 176 text set \$1-loaded-preset;
+#X obj 30 92 t l b;
+#X obj 30 60 list prepend \$1/\$2/\$3-brp;
+#X connect 0 0 4 0;
+#X connect 1 0 2 1;
+#X connect 3 0 2 0;
+#X connect 3 1 1 0;
+#X connect 4 0 3 0;
+#X restore 106 711 pd RECORD_PRESETS;
+#X text 611 7 "search" for GUI value and INT.TIME of Preset, f 18
+;
+#X obj 746 517 cnv 10 25 10 empty \$0-label casa 3 5 0 8 -1 -4032 0
+;
+#X obj 741 454 loadbang;
+#X obj 741 532 s \$0-label;
+#X obj 723 451 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 741 494 label \$1;
+#X obj 741 475 symbol \$3;
+#X text 250 49 receive values remotely;
+#X obj 365 27 cnv 15 15 15 empty empty CHANGE.GUI 18 7 0 8 -257985
+-66577 0;
+#X obj 522 30 cnv 15 15 15 empty empty CHANGE.GUI 18 7 0 8 -257985
+-66577 0;
+#X obj 113 694 cnv 15 15 15 empty empty CHANGE.GUI 18 7 0 8 -257985
+-66577 0;
+#X obj 106 636 list;
+#X obj 275 24 r \$1/\$2/\$3-brp;
+#X text 379 568 records duration and points in same list, f 13;
+#X obj 172 301 t b b b;
+#X obj 302 589 route list;
+#X obj 489 492 s \$0-update-brp;
+#X obj 172 279 r \$0-update-brp;
+#X obj 301 132 route duration;
+#X obj 348 275 route points;
+#X obj 302 544 list prepend duration;
+#X obj 395 518 list prepend points;
+#X obj 301 161 list split 1;
+#X obj 348 252 route list;
+#X msg 328 222 duration \$1;
+#X obj 301 187 t a a;
+#X obj 348 300 t b a;
+#X msg 461 74 duration 162 points 0 23.021 0.828571 5.96848 0.773333
+23.8737 0.394558 47.7474 0.110476 23.8737 0.828571 37.5158 0;
+#X text 456 105 format to use from outside: <duration value> <points
+values>, f 34;
+#X connect 1 0 8 0;
+#X connect 2 0 42 0;
+#X connect 6 0 17 0;
+#X connect 8 0 17 0;
+#X connect 11 0 40 0;
+#X connect 12 0 37 0;
+#X connect 15 0 43 0;
+#X connect 17 0 7 0;
+#X connect 17 1 15 0;
+#X connect 17 2 38 0;
+#X connect 19 0 33 0;
+#X connect 20 0 40 0;
+#X connect 24 0 28 0;
+#X connect 26 0 28 0;
+#X connect 27 0 25 0;
+#X connect 28 0 27 0;
+#X connect 33 0 21 0;
+#X connect 34 0 40 0;
+#X connect 36 0 2 0;
+#X connect 36 1 17 0;
+#X connect 36 2 6 0;
+#X connect 37 0 33 1;
+#X connect 39 0 36 0;
+#X connect 40 0 44 0;
+#X connect 41 0 48 0;
+#X connect 42 0 12 0;
+#X connect 43 0 12 1;
+#X connect 44 0 47 0;
+#X connect 44 1 45 0;
+#X connect 45 0 41 0;
+#X connect 46 0 17 0;
+#X connect 47 0 2 0;
+#X connect 47 1 46 0;
+#X connect 48 0 17 0;
+#X connect 48 1 17 0;
+#X connect 49 0 40 0;
+#X coords 0 -1 1 1 198 125 2 300 354;
